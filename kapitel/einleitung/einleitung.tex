@@ -72,27 +72,28 @@ The major objectives of the study are: Firstly, to explain the behavior of the h
  \subsubsection{Transmission Channels}
 Firstly the transmission channels proposed by Mishkin \footcite[See.][]{Mishkin2007} illustrated in Figure \ref{fig:HousingTransmission} are used to explain the macro economics and housing related data in Germany. Secondly, an SVAR model is proposed and identified using the data evidence. 
 \subsubsection{SVAR Model Identification}
-The structural VAR modeling is one of the standard tools in computational macro economics. In this work we Modify the model used by Wadud \cite[Source: See][]{Wadud2009} and suggest the following model to be identified.
+The structural VAR models are often used to trace the contemporaneous linkage among macroeconomic variables. The SVAR model has the following general form  \footcite[Source: See][]{Lange2020}: 
 \[ A_0 Y_t = A_1(L) Y_t + B \epsilon_t \]
+ Where $Y_t$ is n-vector relevant variables, then $A_0$ and $B$ are $n * n$ matrices and $A_1(L) = \sum\limits_{i=1}^ qA_{1i} L^i $ is the matrices polynomial in the lag operator in which $A$ matrices have the same size as $A_0$ matrix. The error terms$\epsilon_t$ (structural schocks) is an n-vector of serially uncorrelated zero mean structural schocks with and identitiy contemporanous covariance matrix. The crucial part in SVAR modelling is the choice of the macroeconomics variables. The second challenge is that the nmuber of parameters to be identified in the structural model is larger than that of the reduced VAR form. Therefore, some new relations needs to be introduced. This can be usually done by introducing restrictions on $A_0$ or $B_0$ matrix. 
 
- If $n$  is the number of variables in the model then $A_0$ and $B$ are $n * n$ matrices and $A_1(L)$ is the matrices polynomial in the lag operator in which $A$ matrices have the same size as $A_0$ matrix.
-
+In this work, we assume the following set of variables as the variables involed in modeling. 
 The assumed $Y$ is :
 \[ 
  \begin{bmatrix}
         ry \\ 
         \pi \\
         rg \\
-        r \\
+        \ac{r} \\
         mc \\
         h \\
         rhp \\
   \end{bmatrix}
 \]
+
 Where variables are in turn r
 real gdp from bundes bank
  change in consumer price index Calendar and seasonally adjusted  rate from bundes bank to remove short term trends (2015 = 100)
-(source: bundes bank https://www.bundesbank.de/dynamic/action/en/statistics/time-series-databases/time-series-databases/759784/759784?listId=www_s311_lr_vpi)
+$(source: bundes bank https://www.bundesbank.de/dynamic/action/en/statistics/time-series-databases/time-series-databases/759784/759784?listId=www_s311_lr_vpi)$
 
 r is the money market interest rate (EONIA) ate at which banks provide loans to each other with a duration of 1 day, In my opinion this is a good indicator of the monetary policy since it combines central banks ECB's deposit facility rate and ECB interest rates for main refinancing operations. This affect is more clear when we look in the recent data after 2018 where central banks interest rate for refinancing is zero but the deposit facility goes negative and this stimulates banks to lend more money. 
 
@@ -112,10 +113,21 @@ h
 west germany is used as trend is the same in east! this is the only free source of data I could find for this period.
  https://www.statista.com/statistics/999254/number-completed-new-dwellings-west-germany/ in thousenad
 
+The variables are chosen based on the model proposed in housing in Australia \footcite[See.][]{Wadud2009} based on supply and demand model with a modification that the exchange rate and foreign interest rates are ommited from demand equation. The resulting equatioins are as follows:
 
- real government expenditure from bundes bank
- material cost index from Bundes Bank
- housing price index and from Bundes Bank
- real housing price index from Bundes Bank
+\[ 
+h^s = a_1 mc + a_2 rhp + b_1^s \epsilon^s
+h^d = a_3 ry + a_4 rhp + a_5 r + a_6 /pi + a_7 rg  + b_1^d \epsilon^d
+h^s = h^d
+\]
+The notion of time is deleted from the above equation but once can consider that the every variable reperesnt different time instance for example $a-1 mc$ depending on the cohsen number of lags represent $a_{1t} mc_{t} ,  a_{1(t-1)} mc_{(t-1)} ...  $
+this will lead to 
+\[
+ rhp  = c_1 mc+  c_2 ry + c_3 rhp  + c_4 r + c_5 /pi + c_6 rg  + b_1 \epsilon
+\]
+
+The second assumption chosen by author in this work is that $A_0$ is a lower triangular matrix therefore as one can see in the order of variables in bla equation every variable can have only correlation with previous variables in the same time stamp and with all variable in previous time stamps. Therefore, the order of variables play a crucial role in our model. 
+
+
 
 
