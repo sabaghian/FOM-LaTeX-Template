@@ -117,7 +117,7 @@
 % Biblatex
 
 %%%% Neuer Leitfaden (2018)
-\usepackage[
+\usepackage[ 
 backend=biber,
 style=ext-authoryear,
 maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
@@ -178,7 +178,7 @@ mincrossrefs = 1
 %-----------------------------------
 \usepackage{appendix}
 
-
+ 
 %-----------------------------------
 % Zeilenabstand 1,5-zeilig
 %-----------------------------------
@@ -263,52 +263,37 @@ mincrossrefs = 1
 % Titlepage
 %-----------------------------------
 \begin{titlepage}
-	\newgeometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+	\newgeometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+	\includegraphics[width=3cm]{abbildungen/fomLogo} \\
 	\begin{center}
-		\textbf{\myHochschulName}\\
-		\textbf{\langde{Hochschulzentrum}\langen{university location} \myHochschulStandort}\\
-		\vspace{1.5cm}
-			\includegraphics[width=3cm]{abbildungen/fomLogo} \\
-		\vspace{1.5cm}
-		\langde{Berufsbegleitender Studiengang}
-		\langen{part-time degree program}\\
-		\myStudiengang, \mySemesterZahl. Semester\\
+		\vspace{1cm}
+		\textbf{\Large{\myTitel}}\\
+		\large{\mySubtitel}\\
 		\vspace{2cm}
-		\textbf{\myThesisArt}\\
-		\textbf{
-				\langde{zur Erlangung des Grades eines}
-				\langen{to obtain the degree of}
-				}\\
-		\textbf{\myAkademischerGrad}\\
-		% Oder für Hausarbeiten:
-		%\textbf{im Rahmen der Lehrveranstaltung}\\
-		%\textbf{\myLehrveranstaltung}\\
-		\vspace{2cm}
-		\langde{über das Thema}
-		\langen{on the subject}\\
-		\Large{\myTitel}\\
-		\vspace{0.2cm}
+		\textbf{\normalsize{Study Program}}\\
+		\myStudiengang\\
 	\end{center}
 	\normalsize
 	\vfill
 	\begin{tabbing}
 		Links \= Mitte \=Mittez \= Rechts\kill
-		\langde{Betreuer}
-		\langen{Advisor}: \> \> \>\myBetreuer\\
+		\langen{Module}: \> \> \>\myModule\\
+	      \langen{Assignment}: \> \> \>\myAssignment\\
+		\langen{Instructor}: \> \> \>\myInstructor\\
 		\> \> \\
-
-		\langde{Autor}
 		\langen{Author}: \> \> \> \myAutor\\
-		\> \> \>  \langde{Matrikelnr.}
-				\langen{Matriculation Number}: \myMatrikelNr\\
-		\> \> \> \myAdresse\\
+		\langen{Student ID Number}: \myMatrikelNr\\
+		\> \> \\
+		\mySemester\\
 		\> \> \>  \\
-		\langde{Abgabe}
-		\langen{Submission}: \> \> \> \myAbgabeDatum
+		\langen{Place, Date}: \> \> \> \myOrt, \myAbgabeDatum
 	\end{tabbing}
 \end{titlepage}
 
 %-------Ende Titelseite-------------
+%-------Exec Summary-------------
+\input{kapitel/fazit/executive_summary}
+%-------Exec Summary -------------
 
 %-----------------------------------
 % Sperrvermerk
@@ -326,6 +311,11 @@ mincrossrefs = 1
 \setcounter{tocdepth}{2} %wurde vorher in zusaetzlichesMaterial.tex auf 0 gesetzt um Inhalt des Anhangs zu verbergen. Dadurch gehen allerdings Abbildungs und Tabellenverzeichnis kaputt.
 
 %-----------------------------------
+% Abkürzungsverzeichnis
+%-----------------------------------
+\input{abkuerzungen/acronyms}
+\newpage
+%-----------------------------------
 % Abbildungsverzeichnis
 %-----------------------------------
 \listoffigures
@@ -334,11 +324,6 @@ mincrossrefs = 1
 % Tabellenverzeichnis
 %-----------------------------------
 \listoftables
-\newpage
-%-----------------------------------
-% Abkürzungsverzeichnis
-%-----------------------------------
-\input{abkuerzungen/acronyms}
 \newpage
 %-----------------------------------
 % Seitennummerierung auf arabisch und ab 1 beginnend umstellen
@@ -355,6 +340,7 @@ mincrossrefs = 1
 %-----------------------------------
 \input{kapitel/einleitung/einleitung}
 \input{kapitel/kapitel_1/kapitel_1}
+\input{kapitel/kapitel_2/kapitel_2}
 \input{kapitel/fazit/fazit}
 
 %-----------------------------------
