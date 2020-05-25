@@ -1,20 +1,17 @@
 \newpage
-\section{Monetary Transition Channels} \label{MonetaryTransitionChannels}
-In his paper \footcite[See.][]{Mishkin1996}, Mishkin gives an overview of the transmission mechanisms of monetary policy in economy. Most importatn channels are namely interest rate channel, asset prices and credit channel. In the following sections we review this paper and explain every channel in detail. 
+\section{Monetary Transition Channels} \label{sec:MonetaryTransitionChannels}
+In his paper \footcite[See.][]{Mishkin1996}, Mishkin gives an overview of the transmission mechanisms of monetary policy in economy. Most important channels are namely interest rate channel, asset prices and credit channel. In the following sections we review this paper and explain every channel in detail. 
 
 \subsection{Interest Rate}
 Interest rate channel is explained with the traditional Keynesian \ac{ISLM} and shows the effects of a monetary expansion as follows:
   \[M \uparrow \implies r \downarrow \implies I \uparrow \implies Y \uparrow\]
-where $ M \uparrow $ indicates expansionary monetary policy which leads to fall in real interest rate $r$, which lowers the cost of capital, causing rise in investment spending $I$, therefore resulting in increase in output $y$.
-This is equal to a shift to the right of IS curve in IS-LM graph. One should notice that the real interest rate is a function of the nominal interest rate and inflation such that an increase in inflation causes a decrease in real interest rate. As an example even if the nominal interest rate is at a floor zero an increase in money supply can cause an increase in expected price which respectively decreases the real interest rate.
+where $ M \uparrow $ indicates expansionary monetary policy which leads to fall in real interest rate $r$, which lowers the cost of capital, causing rise in investment spending $I$, therefore resulting in an increase in output $y$.
 
 \subsection{Asset Price Channels}
-Exchange Rate:
 According to Mishkin \footcite[See.][]{Mishkin1996} the exchange rate channel can be illustrated as follows:
  \[M \uparrow \implies r \downarrow \implies E \downarrow \implies NX \uparrow\ Y \uparrow\]
-An expansionary monetary policy least to fall in domestic real interest rate. As a consequence domestic currency$E$  becomes less attractive in comparison to other currencies. Depreciated currency makes domestic good more attractive for export. As a result net export $NX$ raises followed by aggregate output. s
-Equity Price Channels:
- Two sub-channels are introduced for equity price namely Tobin's q and Wealth Effects \footcite[See.][]{Mishkin1996}. 
+An expansionary monetary policy leads to fall in domestic real interest rate. As a consequence domestic currency$E$  becomes less attractive in comparison to other currencies. Depreciated currency makes domestic good more attractive for export. As a result net export $NX$ raises followed by aggregate output. 
+Furthermore,  two sub-channels are introduced for equity price namely Tobin's q and Wealth Effects \footcite[See.][]{Mishkin1996}. 
 Tobin's q can be summarized as following \footcite[See.][]{Mishkin1996}: 
  \[M \uparrow \implies P_e \uparrow \implies q \uparrow \implies I \uparrow \implies Y \uparrow\]
 Higher equity prices $P_e$ leads to a higher $q$ factor (market value of the firm divided by replacement cost of capital). When $q$ is high companies issue equities and buy new investment goods which are relatively cheaper so investment increases. 
@@ -47,8 +44,8 @@ Following his older paper on monetary transmission channels, Mishkin concentrate
 Direct Interest Rate Effects through the User Cost of Capital
 
 The user cost of housing capital can be described as ~\footcite[See.][]{Mishkin2007}
- \[ uc = hp((1-t)i - \pi_e) - (/pi_h - /pi_e) + \delta \]
- whre $uc$ is user cost of capital, $hp$ is the relative purchase price of new housing capital, $i$ is the mortgage rate and $/pi_h$ and $/pi_e$ are the appreciation of housing prices and real inflation. $\delta$ is depreciation rate for housing. The formula also deductible mortgage interest by adjusting the nominal mortgage rate by the marginal tax rate $t$. after tax real interest rate. One can see that when the interest rate raises the user cost of capital raises  and consequently the demand for housing decreases. The fall in demand result in a fall in supply and consequently aggregate demand. Looking more precisely in $(/pi_h - /pi_e)$ part of user cost equation one can see the effect of interest rate. When interest rate raises the expected appreciation of housing price falls and therefore the current user cost of capital increases which in turn result in decline in demand. 
+ \[ uc = hp((1-t)i - \pi_e) - (\pi_h - \pi_e) + \delta \]
+ whre $uc$ is user cost of capital, $hp$ is the relative purchase price of new housing capital, $i$ is the mortgage rate and $\pi_h$ and $\pi_e$ are the appreciation of housing prices and real inflation. $\delta$ is depreciation rate for housing. The formula also deductible mortgage interest by adjusting the nominal mortgage rate by the marginal tax rate $t$. after tax real interest rate. One can see that when the interest rate raises the user cost of capital raises  and consequently the demand for housing decreases. The fall in demand result in a fall in supply and consequently aggregate demand. Looking more precisely in $(\pi_h - \pi_e)$ part of user cost equation one can see the effect of interest rate. When interest rate raises the expected appreciation of housing price falls and therefore the current user cost of capital increases which in turn result in decline in demand. 
 
 Interest Rate Effect on Supply \footcite[See.][]{Mishkin2007}
 Higher short-term rates, which increase cost of supply and decreases housing activity.
@@ -58,13 +55,48 @@ Wealth Effects \footcite[See.][]{Mishkin2007}
 There evidences proving an increase in wealth should have positive effect on consumption\footcite[See.][]{Mishkin2007}. As we know from previous section an expansionary monetary policy can increase the demand for housing which normally leads to in increase in house price. Therefore, this results to an increase in total wealth and consequently aggregate demand.
 Balance Sheet, Credit-Channel Effects on Consumer Spending \footcite[See.][]{Mishkin2007}
 An increase in house price improves the house hold balance sheet and reduces the risk for the credit giver as explained in previous sections.
-In Figure on can see a general plot of changes in the variables introduecd in .
+
+\subsection{Data Analysis}\label{sec:Data}
+In this section we introduce the variables we think play a role in housing sector of economy. The data evidence from German market and the sources of data are introduced here too. following are the list of the variables.
+\subsubsection{Interest Rate} 
+\ac{r} is the money market interest rate \footcite[See.][]{BundesBank} (EONIA) rate at which banks provide loans to each other with a duration of 1 day, In my opinion this is a good indicator of the monetary policy since it combines central banks ECB's deposit facility rate and ECB interest rates for main refinancing operations. This affect is more clear when we look in the recent data after 2018 where central banks interest rate for refinancing is zero but the deposit facility goes negative and this stimulates banks to lend more money. Original data is monthly and we need to average to get the yearly rate. 
+
+\subsubsection{Government Spending} 
+General government deficit(-) or surplus(+) as defined in the Maastricht Treaty \footcite[See.][]{BundesBank} is used to describe \ac{rg}. In my opinion, it is a good indicator of the Government fiscal policy since it includes both expenditure and earning of the government. Change in percentage for each year is calculated and sign is reversed such that when the government has a deficit it is an indicator if positive government spending.
+
+\subsubsection{Output} 
+
+\ac{ry} is represented by the data from German overall econonmy \footcite[See.][]{BundesBank}.
+
+\subsubsection{Housing Price} 
+\ac{hp} is represented by the data from OECD \footcite[See.][]{OECD}.
+
+\subsubsection{Housing Supply} 
+For \ac{h} west Germany's data from Statista\footcite[See.][]{Statista} is used. Data is unfortunately only for west Germany but we used it as we thought that it is enough representative.
+
+\subsubsection{Data Analysis} \label{subsec:dataAnalysis}
+If we look into Figure \ref{irhp} and take the period 2008 till 2011 as an example into account, we can see that \ac{r} and \ac{rg} are reduced and \ac{hp} is increased as a result with a little bit of delay. This change in the house price is expected as we described in chapter \ref{sec:MonetaryTransitionChannels}.   
+
 \begin{figure}[H]
-\caption{Interest Rate, Government Spending and House Price in Germany in Years 2000-2020}
-\includegraphics[width=0.9\textwidth]{interestRateOnOutput}
+\caption{Interest Rate, Government Spending and House Price in Germany in Years 2000-2020}\label{irhp}
+\includegraphics[width=0.9\textwidth]{interesetRateOnHousePrice}
 \\
-\cite[Quelle: Own Graph][]{FOM}
+Source: Own Figure
 \end{figure}
 
-As one can see a has lead to house price to decrease.
+Moreover, if we look into Figure \ref{irgdp} and take the period 2008 till 2011 as an example into account, we can see that \ac{r} and \ac{rg} are reduced and \ac{hp} is increased as a result with a little bit of delay. This change in the house price is expected as we described in \ref{MonetaryTransitionChannels}.   
+
+
+
+\begin{figure}[H]
+\caption{Interest Rate, Housing Supply and GDP in Germany in Years 2000-2020}\label{irgdp}
+\includegraphics[width=0.9\textwidth]{interestRateOnOutput}
+\\
+Source: Own Figure
+\end{figure}
+
+
+
+
+
 

@@ -3,7 +3,7 @@
 
 For implementaiton of the methods introduced in previous section the SVAR package in R \footcite[See.][]{Lange2020} software is used.
 \subsubsection{SVAR Model Identification}
-The structural VAR models are often used to trace the contemporaneous linkage among macroeconomic variables. The SVAR model has the following general form  \footcite[Source: See][]{Lange2020}: 
+The structural VAR models are often used to trace the contemporaneous linkage among macroeconomic variables. The SVAR model has the following general form  \footcite[See.][]{Lange2020}: 
 \[ A_0 Y_t = mu+  A_1(L) Y_t + B \epsilon_t \]
 where yt = [y1t
 , ..., yKt]
@@ -31,53 +31,37 @@ The assumed $Y$ is :
   \end{bmatrix}
 \]
 
-r is the money market interest rate (EONIA) rate at which banks provide loans to each other with a duration of 1 day, In my opinion this is a good indicator of the monetary policy since it combines central banks ECB's deposit facility rate and  s. This affect is more clear when we look in the recent data after 2018 where central banks interest rate for refinancing is zero but the deposit facility goes negative and this stimulates banks to lend more money. Original data is monthly and we need to average to get the yearly rate. See https://www.bundesbank.de/en/statistics/time-series-databases
-
-rg is
-General government deficit(-) or surplus(+) as defined in the Maastricht Treaty from  Bundes Bank is used, In my opinion it is a good indicator of the Government fiscal policy since it includes both expenditure and earinging of the gorvernment. Change in percentage for each year is calculated and sign is reversed such that when the governemnt has a deficit it is an indicator if positive government spending.
-
-ry is
-Germany / National accounts / Overall economy / Gross domestic product (price adjusted) 1, 2, 3
-
-hp is 
-Real house prices, 2015=100, adjusted! https://data.oecd.org/price/housing-prices.htm
-cite: OECD (2020), Housing prices (indicator). doi: 10.1787/63008438-en (Accessed on 18 May 2020)
-mc 
-change in percent Construction price index / Germany / Unadjusted figure / Total  bundes bank
-
-h
-west germany is used as trend is the same in east! this is the only free source of data I could find for this period.
- https://www.statista.com/statistics/999254/number-completed-new-dwellings-west-germany/ in thousenad
-
-The variables are chosen based on the model proposed in housing in Australia \footcite[See.][]{Wadud2009} based on supply and demand model with a modification that the exchange rate and foreign interest rates are ommited from demand equation. The resulting equatioins are as follows:
 
 \[ 
 h^s = a_1 mc + a_2 rhp + b_1^s \epsilon^s
-h^d = a_3 ry + a_4 rhp + a_5 r + a_6 /pi + a_7 rg  + b_1^d \epsilon^d
+h^d = a_3 ry + a_4 rhp + a_5 r + a_6 \pi + a_7 rg  + b_1^d \epsilon^d
 h^s = h^d
 \]
 The notion of time is deleted from the above equation but once can consider that the every variable reperesnt different time instance for example $a-1 mc$ depending on the cohsen number of lags represent $a_{1t} mc_{t} ,  a_{1(t-1)} mc_{(t-1)} ...  $
 this will lead to 
 \[
- rhp  = c_1 mc+  c_2 ry + c_3 rhp  + c_4 r + c_5 /pi + c_6 rg  + b_1 \epsilon
+ rhp  = c_1 mc+  c_2 ry + c_3 rhp  + c_4 r + c_5 \pi + c_6 rg  + b_1 \epsilon
 \]
 
 The second assumption chosen by author in this work is that $A_0$ is a lower triangular matrix therefore as one can see in the order of variables in bla equation every variable can have only correlation with previous variables in the same time stamp and with all variable in previous time stamps. Therefore, the order of variables play a crucial role in our model. 
 
 
-\subsection{SVAR Results}
-The following picture shows the results of the identified model to different schocks
+\subsection{\ac{SVAR} Results}
+The following picture shows the impulse response of the identified model to different shocks. As one can see in Figure \ref{imp1}, when the housing supply increases housing price starts to decrease. This result fits to what we expected from the monetary transition channels. However, the plot shows a small drop in house price as a result of an increase in material cost. In my opinion, this is due to negligible affect of material cost on housing price in Germany. 
+Furthermore, a close look at Figure \ref{imp2} show that after an increase in interest rate, housing price start to decrease for a period of 2 years. This result can also be explained with both IS-LM and Transition Channels model. the housing supply increases housing price starts to decrease. This result fits to what we expected from the monetary transition channels. Besides that, the plots implies that an increase in GDP leads to higher prices. This is also expected from an economy with growing GDP to experience and increase in house prices. However, the first plot implies that an increase in government spending can decrease the house price. In my opinion, this is not a result that one may expect. Usually an increase in government spending should lead to an increase in GDP and consequently the housing price. This impulse response can be a result of small number of lags (2 lags) chosen for the identified model and the sticky nature of housing price. Besides that, as the data set used for this identification covers only last 20 years,it can be that the data is not informative enough for this type of identification. However, this can be improved by adding feasibility constraints to the model. 
 \begin{figure}[H]
-\caption{Interest Rate, Government Spending and House Price in Germany in Years 2000-2020}
+\label{imp1}
+\caption{Impulse Response of a Shock in Housing Supply, Housing Price and Material Cost on Housing Price}
 \includegraphics[width=0.9\textwidth]{hp1}
 \\
-\cite[Quelle: Own Graph][]{FOM}
+Source: Own Graph
 \end{figure}
 \begin{figure}[H]
-\caption{Interest Rate, Government Spending and House Price in Germany in Years 2000-2020}
+\label{imp2}
+\caption{Impulse Response of a Shock Government Spending, Interest Rate and Output on Housing Price}
 \includegraphics[width=0.9\textwidth]{hp2}
 \\
-\cite[Quelle: Own Graph][]{FOM}
+Source: Own Graph
 \end{figure}
 
 
